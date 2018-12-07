@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">My Friends</string>
+    <string name="name">Nome</string>
+    <string name="tel">(41) 99999-9999</string>
+    <string name="mail">mail@gmail.com</string>
+    <string name="site">up.edu.br</string>
+    <string name="editar">Editar</string>
+    <string name="favorito">Favorito</string>
+    <string name="excluir">Excluir</string>
+    <string name="userPhoto">Foto do usuário</string>
+    <string name="endereco">Endereço</string>
+    <string name="imagem">Foto do contato</string>
+    <string name="imgPhone">Icone telefone</string>
+    <string name="imgMail">Icone email</string>
+    <string name="imgSite">Icone site</string>
+    <string name="imgAddress">Icone endereço</string>
+    <string name="imgName">Icone nome</string>
+    <string name="salvar">salvar</string>
+    <string name="empty_not_saved">Campo vazio, favor arrumar.</string>
+    <string name="channel_name">nome</string>
+    <string name="channel_description">descricao</string>
+</resources>
