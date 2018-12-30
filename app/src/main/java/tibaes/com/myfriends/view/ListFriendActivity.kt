@@ -24,17 +24,11 @@ class ListFriendActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list_friend)
 
-        fbtnAddFriend.setOnClickListener {
-            startActivity(Intent(this, NewFriendActivity::class.java))
-        }
-
         val recyclerView = rvFriend
         val adapter = FriendListAdapter(this)
 
         adapter.onItemClick = {it ->
-            val intent = Intent(this@ListFriendActivity, NewFriendActivity::class.java)
-            intent.putExtra(NewFriendActivity.EXTRA_REPLY , it)
-            startActivityForResult(intent, newActivityRequestCode)
+            openNewFriend(it)
         }
 
         recyclerView.adapter = adapter
@@ -53,11 +47,15 @@ class ListFriendActivity : AppCompatActivity() {
         })
 
         fbtnAddFriend.setOnClickListener {
-            val intent = Intent(this@ListFriendActivity, NewFriendActivity::class.java)
-            startActivityForResult(intent, newActivityRequestCode)
+            openNewFriend(null)
         }
     }
 
+    fun openNewFriend(friend: Friend?){
+        val intent = Intent(this@ListFriendActivity, NewFriendActivity::class.java)
+        intent.putExtra(NewFriendActivity.EXTRA_REPLY , friend)
+        startActivityForResult(intent, newActivityRequestCode)
+    }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
@@ -79,5 +77,4 @@ class ListFriendActivity : AppCompatActivity() {
             }
         }
     }
-
 }

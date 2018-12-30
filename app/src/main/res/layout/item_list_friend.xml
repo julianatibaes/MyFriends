@@ -24,7 +24,7 @@
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:src="@drawable/ic_person_24dp"
-            app:civ_border_color="#FF000000"
+            app:civ_border_color="#7b1fa2"
             app:civ_border_width="2dp"
             android:layout_margin="8dp"/>
 

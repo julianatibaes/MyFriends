@@ -1,7 +1,6 @@
 package tibaes.com.myfriends.view
 
 import android.Manifest
-import android.content.ContentValues
 import android.content.Intent
 import android.net.Uri
 import android.support.v7.app.AppCompatActivity
@@ -9,17 +8,7 @@ import android.os.Bundle
 import android.provider.MediaStore
 import kotlinx.android.synthetic.main.activity_new_friend.*
 import android.app.Activity
-import android.app.NotificationChannel
-import android.app.NotificationManager
-import android.content.Context
 import android.content.pm.PackageManager
-import android.graphics.Bitmap
-import android.graphics.Color
-import android.hardware.camera2.CameraCharacteristics
-import android.hardware.camera2.CameraDevice
-import android.hardware.camera2.CaptureRequest
-import android.media.ExifInterface
-import android.opengl.Matrix
 import android.os.Build
 import android.os.Environment
 import android.support.v4.content.FileProvider
@@ -27,12 +16,8 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
-import com.facebook.drawee.backends.pipeline.Fresco
-import com.facebook.imagepipeline.common.ResizeOptions
-import com.facebook.imagepipeline.request.ImageRequestBuilder
 import tibaes.com.myfriends.R
 import tibaes.com.myfriends.entity.Friend
-import tibaes.com.myfriends.utils.imgToByteArray
 import java.io.File
 import java.io.IOException
 import java.text.SimpleDateFormat
@@ -45,7 +30,6 @@ class NewFriendActivity : AppCompatActivity() {
     var menu: Menu? = null
 
     companion object {
-        // image pick code
         private val REQUEST_IMAGE_GARELLY = 1000
         private val REQUEST_IMAGE_CAPTURE = 2000
 
@@ -209,7 +193,6 @@ class NewFriendActivity : AppCompatActivity() {
         if (resultCode == Activity.RESULT_OK && requestCode == REQUEST_IMAGE_CAPTURE) {
             imgNewFriend.setImageURI(Uri.parse(mCurrentPhotoPath))
         }
-
     }
 
     override fun onContextItemSelected(item: MenuItem?): Boolean {
@@ -219,8 +202,6 @@ class NewFriendActivity : AppCompatActivity() {
         }
         return super.onContextItemSelected(item)
     }
-
-
 
 // ============ [ BEGIN MENU ] ===============================
 
@@ -234,7 +215,6 @@ class NewFriendActivity : AppCompatActivity() {
         } catch (e: Exception) {
             Log.e("TAG", e.message.toString())
         }
-
         return true
     }
 
@@ -250,6 +230,7 @@ class NewFriendActivity : AppCompatActivity() {
                 etNome.requestFocus()
             }  else {
                 if ((::friend.isInitialized) && (friend.fId > 0)) {
+                    friend.fName = etNome.text.toString()
                     friend.email = etEmail.text.toString()
                     friend.address = etAddress.text.toString()
                     friend.phone = etFone.text.toString()

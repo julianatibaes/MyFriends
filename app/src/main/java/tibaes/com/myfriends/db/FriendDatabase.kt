@@ -1,17 +1,11 @@
 package tibaes.com.myfriends.db
 
-import android.arch.persistence.db.SupportSQLiteDatabase
 import android.arch.persistence.room.Database
 import android.arch.persistence.room.RoomDatabase
 import tibaes.com.myfriends.entity.Friend
 import android.arch.persistence.room.Room
 import android.content.Context
-import android.graphics.Bitmap
 import kotlinx.coroutines.experimental.CoroutineScope
-import kotlinx.coroutines.experimental.Dispatchers
-import kotlinx.coroutines.experimental.IO
-import kotlinx.coroutines.experimental.launch
-
 
 /**
  * This is the backend. The database. This used to be done by the OpenHelper.

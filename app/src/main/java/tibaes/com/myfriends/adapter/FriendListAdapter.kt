@@ -2,7 +2,6 @@ package tibaes.com.myfriends.adapter
 
 import android.content.Context
 import android.net.Uri
-import android.support.v7.widget.CardView
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View

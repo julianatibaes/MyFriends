@@ -5,7 +5,6 @@ import android.arch.persistence.room.ColumnInfo
 import android.arch.persistence.room.PrimaryKey
 import org.jetbrains.annotations.NotNull
 import java.io.Serializable
-import java.util.*
 
 @Entity(tableName = "friend_table")
 data class Friend (
